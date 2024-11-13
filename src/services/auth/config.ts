@@ -1,6 +1,6 @@
-import { LogLevel } from "@azure/msal-browser";
+import { Configuration, LogLevel } from "@azure/msal-browser";
 
-export const msalConfig = {
+export const msalConfig: Configuration = {
     auth: {
         clientId: import.meta.env.VITE_MICROSOFT_ENTRAR_CLIENT_ID,
 
@@ -10,8 +10,8 @@ export const msalConfig = {
         navigateToLoginRequestUrl: false,
     },
     cache: {
-        cacheLocation: "sessionStorage",
-        storeAuthStateInCookie: false,
+        cacheLocation: "localStorage",
+        storeAuthStateInCookie: true,
     },
     system: {
         loggerOptions: {
