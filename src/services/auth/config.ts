@@ -9,13 +9,14 @@ export const msalConfig: Configuration = {
         postLogoutRedirectUri: "/",
         navigateToLoginRequestUrl: false,
     },
+
     cache: {
         cacheLocation: "localStorage",
         storeAuthStateInCookie: true,
     },
     system: {
         loggerOptions: {
-            loggerCallback: (level: any, message: any, containsPii: any) => {
+            loggerCallback: (level, message, containsPii) => {
                 if (containsPii) {
                     return;
                 }
