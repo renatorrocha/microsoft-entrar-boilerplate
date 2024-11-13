@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "@/global.css";
 import App from "@components/providers/app";
+import AuthProvider from "@components/providers/auth";
 
 const container = document.getElementById("root");
 
@@ -10,7 +11,9 @@ if (container) {
 
     root.render(
         <StrictMode>
-            <App />
+            <AuthProvider>
+                <App />
+            </AuthProvider>
         </StrictMode>
     );
 }
